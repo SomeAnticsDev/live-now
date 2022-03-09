@@ -1,11 +1,14 @@
-require('dotenv').config();
+const path = require('path');
+const env = path.join(__dirname, '../.env');
+require('dotenv').config({path: env});
+
 const {StaticAuthProvider} = require('@twurple/auth');
 const {ApiClient} = require('@twurple/api');
 
 // Initialize Twitch API
 const authProvider = new StaticAuthProvider(
-	process.env.TWITCH_BOT_CLIENT_ID,
-	process.env.TWITCH_OAUTH_TOKEN,
+	process.env.CLIENT_ID,
+	process.env.TOKEN,
 );
 
 const apiClient = new ApiClient({authProvider});
