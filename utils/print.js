@@ -12,10 +12,10 @@ module.exports = function print(stream) {
 	console.log(
 		chalk.gray.italic('/raid') +
 		' ' +
-		chalk.cyan(userDisplayName)
+		chalk.cyan.bold(userDisplayName)
 	);
 	
-	console.log(chalk.greenBright.bold(title));
+	console.log(chalk.greenBright(title));
 	console.log(gameName);
 	console.log();
 }
